@@ -7,9 +7,9 @@ def createDataSet():
     return group, labels
 
 def classify(inX,dataSet,labels,k):
-    dataSetSize = dataSet.shape[0] #数据集大小
-    diffMat = tile(inX,(dataSetSize,1)) - dataSetSize
-    sqDiffMat = diffMat ** 2
-    sqDistance = sqDiffMat.sum(axis=1) #???
+	dataSetSize = dataSet.shape[0] 
+	diffMat = tile(inX,(dataSetSize,1))-dataSetSize
+	sqDiffMat = diffMat ** 2
+	sqDistance = sqDiffMat.sum(axis=1) #???
 
 
