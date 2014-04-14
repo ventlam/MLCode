@@ -26,11 +26,14 @@ def setWord2Vec(vocabList,inputSet):
     print returnVec
     return returnVec
 #navie bayes training
-def trainNavieBayes():
-    numTrainDocs = len(trainMaxtrix)
-    numWords = len(trainMaxtrix[0])
+#输入文档矩阵，每篇文档类别标签所构成的向量
+def trainNavieBayes(trainMaxtrix,trainCategory):
+    numTrainDocs = len(trainMaxtrix) #训练文档大小?
+    numWords = len(trainMaxtrix[0]) #？
+    #the items of an iterable from left to right and returns the total.
     pAbsuvie = sum(trainCategory) / float(numTrainDocs)
-    poNum = zero(numWords); p1Num = zero(numwords)
+    poNum = zeros(numWords) #np.zeros(5) array([ 0.,  0.,  0.,  0.,  0.])
+    p1Num = zeros(numwords) #Return a new array of given shape and type, filled with zeros.
     for i in range(numTrainDocs):
         if trainCategory[i] == 1:
             p1Num += trainMaxtrix[i]
