@@ -25,6 +25,24 @@ def setWord2Vec(vocabList,inputSet):
             print "word: %s is not in our vocabulary" % word
     print returnVec
     return returnVec
+#navie bayes training
+def trainNavieBayes():
+    numTrainDocs = len(trainMaxtrix)
+    numWords = len(trainMaxtrix[0])
+    pAbsuvie = sum(trainCategory) / float(numTrainDocs)
+    poNum = zero(numWords); p1Num = zero(numwords)
+    for i in range(numTrainDocs):
+        if trainCategory[i] == 1:
+            p1Num += trainMaxtrix[i]
+            p1Denom += sum(trainMaxtrix[i]) #?
+        else:
+            p0Num += trainMatrix[i]
+            p9Denom += sum(trainMaxtrix[i])
+    p0vect = p0Num / p0Denom
+    p1vect = p1Num / p1Denom
+    print p1vect,p0vect
+    return p0vect,p1vect,pAbsuvie
+
 #主函数这种东西，我也不知道为什么应该存在
 def main():
     postlist,clavec = loadDataSet()
